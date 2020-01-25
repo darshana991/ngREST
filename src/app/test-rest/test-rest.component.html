@@ -1,0 +1,18 @@
+
+
+<table mat-table style="width:100%" >
+    <tr>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Titile</th>
+        <th>Body</th>
+      
+     </tr>  
+     <tr   *ngFor="let item2 of listposts">
+        <td>{{item2.serId}}</td>
+        <td>{{item2.id}}</td>
+        <td>{{item2.titile}}</td>
+        <td>{{item2.body}}</td>
+     </tr>   
+
+</table >
