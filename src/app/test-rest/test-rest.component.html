@@ -1,18 +1,12 @@
 
 
-<table mat-table style="width:100%" >
-    <tr>
-        <th>UserId</th>
-        <th>Id</th>
-        <th>Titile</th>
-        <th>Body</th>
-      
-     </tr>  
-     <tr   *ngFor="let item2 of listposts">
-        <td>{{item2.serId}}</td>
-        <td>{{item2.id}}</td>
-        <td>{{item2.titile}}</td>
-        <td>{{item2.body}}</td>
-     </tr>   
+<h4>Basic mat-select</h4>
+<mat-form-field>
+  <mat-label > Emails </mat-label>
+  <mat-select>
+    <mat-option *ngFor="let  als of listalbums" [value]="als.email">
+      {{als.email}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
-</table >

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RestServiceService } from '../rest-service.service';
-import {MatTableModule} from '@angular/material/table';
 
 
 @Component({
@@ -12,10 +11,18 @@ export class TestRestComponent implements OnInit {
   listComments : comments[];
   listposts : posts[];
   responsObj: posts;
+ listalbums :  albums[] ;
+ selected = 'option2';
+         
+
 
   constructor( private restServiceService : RestServiceService   ) { }
 
   ngOnInit() {
+
+
+
+ 
     this.restServiceService.getAllcomments().subscribe
     (
       data =>
@@ -51,6 +58,18 @@ export class TestRestComponent implements OnInit {
       )
 
 
+      this.restServiceService.getMails().subscribe
+      (
+        data =>
+        {
+            this.listalbums = data;
+            console.log ('inside getMails');
+            console.log(data);
+
+        }
+      )
+
+
        
 
   }
@@ -78,8 +97,12 @@ interface posts{
    id : number ,
    title : string ,
    body : string 
+}
 
-
+interface albums{
+  userId : number ,
+  id : number ,
+  title : string 
 }
 
 

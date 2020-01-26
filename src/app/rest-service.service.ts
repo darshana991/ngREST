@@ -22,4 +22,9 @@ export class RestServiceService {
     return this.httpClient.post('https://jsonplaceholder.typicode.com/posts' , obj   )
   } 
 
+  getMails():Observable<any>{
+    
+    return this.httpClient.get('https://jsonplaceholder.typicode.com/comments?postId=1')
+  }
+
 }
