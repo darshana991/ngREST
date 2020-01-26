@@ -1,12 +1,9 @@
+<h1>My Application</h1>
 
-
-<h4>Basic mat-select</h4>
-<mat-form-field>
-  <mat-label > Emails </mat-label>
-  <mat-select>
-    <mat-option *ngFor="let  als of listalbums" [value]="als.email">
-      {{als.email}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
+<button (click) ="restCheck()" > Go go  </button>
+<div>
+  
+<select [(value)]="defSel">
+  <option *ngFor="let c of listalbums" [ngValue]="c">{{c.id}}</option>
+</select>
+</div>

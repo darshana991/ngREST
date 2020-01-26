@@ -12,13 +12,15 @@ export class TestRestComponent implements OnInit {
   listposts : posts[];
   responsObj: posts;
  listalbums :  albums[] ;
- selected = 'option2';
+ selectedValue : any;
+ defSel : any ;
          
 
 
   constructor( private restServiceService : RestServiceService   ) { }
 
   ngOnInit() {
+
 
 
 
@@ -75,7 +77,23 @@ export class TestRestComponent implements OnInit {
   }
 
 
-   
+  restCheck(){
+
+    this.restServiceService.getMails().subscribe
+    (
+      data =>
+      {
+          this.listalbums = data;
+          this.selectedValue = this.listalbums[3] ;
+          this.defSel = this.selectedValue.id;
+          console.log(this.defSel);
+          console.log ('inside getMails');
+          console.log(data);
+
+      }
+    )
+
+  }
   
 
 
